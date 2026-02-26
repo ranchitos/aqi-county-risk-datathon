@@ -1,33 +1,36 @@
-# UW-Crimes-for-Situational-Awareness
+# EPA Air Quality Risk Analysis
 
 ## Decision Problem
-Which areas and time periods on the University of Washington campus should be prioritized for targeted safety interventions given limited security resources?
+Which U.S. counties should be prioritized for targeted air quality interventions given limited monitoring and mitigation resources?
 
 ## Dataset
-Seattle Crime Data (2008 - Present)
-Includes spatial coordinates by engineering zone groupings, timestamps, and incident categories.
+EPA Air Quality Index (AQI) by County dataset.
+Includes annual county-level counts of AQI categories and pollutant-specific exposure.
 
 ## Methodology
-- Aggregated incidents by **engineering zones** to identify high-density areas.
-- Constructed **hourly time buckets** and **weekday indicators** to detect peak risk periods.
-- Analyzed **incident categories** to determine the composition of campus risk (property vs. violent).
-- Translated spatial–temporal and categorical findings into data-informed recommendations for resource allocation and preventive measures.
+- Computed the percentage of days classified as:
+  - Unhealthy for Sensitive Groups
+  - Unhealthy
+  - Very Unhealthy
+  - Hazardous
+- Created a composite **risk score** based on the frequency of unhealthy AQI days.
+- Ranked counties by risk score to identify high-priority areas.
+- Identified the **dominant pollutant** in high-risk counties using pollutant-specific day counts.
 
 ## Key Findings
-- 70% of incidents occurred in high-density areas, including **The Ave** and **Greek Row**.
-- Consistent weekday spikes were observed between **12–1 PM**.
-- **Theft** is the dominant incident category, indicating that campus risk is primarily property-related rather than violent.
-- Insights support **targeted safety measures** and **evidence-based allocation** of campus resources.
+- A small subset of counties accounts for the highest long-term air quality risk.
+- Ozone dominates exposure in most high-risk counties.
+- Risk is driven more by **frequency of unhealthy exposure** than isolated AQI peaks.
 
 ## Outputs
-- Spatial maps of incident concentration by campus zone
-- Hourly and weekday risk patterns
-- Categorical distribution charts of incident types
-- Recommendations for preventive and resource strategies
+- Ranked list of counties by air quality risk
+- Priority categories for intervention
+- Pollutant-specific exposure profiles
 
 ## Tools
 - Python
 - Jupyter Notebook
+- Canva
 
 ## Notes
-This project was completed as part of the **Applied Analytics Club at UW, Jan 2026 – Mar 2026**.
+This project was completed during the 7th DubsTech Datathon.
